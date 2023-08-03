@@ -8,7 +8,6 @@
 linters:
   enable:
     - bodyclose # checks whether HTTP response body is closed successfully [fast: false, auto-fix: false]
-    - depguard # Go linter that checks if package imports are in a list of acceptable packages [fast: true, auto-fix: false]
     - errcheck # Inspects source code for security problems [fast: true, auto-fix: false]
     - gocritic # The most opinionated Go source code linter [fast: true, auto-fix: false]
     - gocyclo # Computes and checks the cyclomatic complexity of functions [fast: true, auto-fix: false]
@@ -31,6 +30,7 @@ linters:
 
   disable:
     # TODO(ross): fix errors reported by these checkers and enable them
+    - depguard # Go linter that checks if package imports are in a list of acceptable packages [fast: true, auto-fix: false]
     - dupl # Tool for code clone detection [fast: true, auto-fix: false]
     - gochecknoglobals # Checks that no globals are present in Go code [fast: true, auto-fix: false]
     - gochecknoinits # Checks that no init functions are present in Go code [fast: true, auto-fix: false]
@@ -38,7 +38,7 @@ linters:
     - lll # Reports long lines [fast: true, auto-fix: false]
 linters-settings:
   goimports:
-    local-prefixes: github.com/crewjam/saml
+    local-prefixes: github.com/ZackaryWelch/saml
   govet:
     disable:
       - shadow
