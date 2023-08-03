@@ -1,9 +1,9 @@
 module github.com/ZackaryWelch/saml/samlsp
 
-go 1.20
+go 1.21.0
 
 require (
-	github.com/ZackaryWelch/saml v0.0.0-20230803152312-2b68f7d98531
+	github.com/ZackaryWelch/saml v1.0.0
 	github.com/crewjam/httperr v0.2.0
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/mattermost/xml-roundtrip-validator v0.1.0
@@ -19,6 +19,6 @@ require (
 	github.com/jonboulle/clockwork v0.4.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	golang.org/x/crypto v0.11.0 // indirect
+	golang.org/x/crypto v0.12.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
