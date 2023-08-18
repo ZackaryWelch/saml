@@ -3,8 +3,8 @@ module github.com/ZackaryWelch/saml
 go 1.21.0
 
 require (
-	github.com/ZackaryWelch/saml/samlidp v1.0.0
-	github.com/ZackaryWelch/saml/samlsp v1.0.0
+	github.com/ZackaryWelch/saml/samlidp v1.0.2
+	github.com/ZackaryWelch/saml/samlsp v1.0.2
 	github.com/beevik/etree v1.2.0
 	github.com/dchest/uniuri v1.2.0
 	github.com/golang-jwt/jwt/v4 v4.5.0
