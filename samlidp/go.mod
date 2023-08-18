@@ -3,7 +3,7 @@ module github.com/ZackaryWelch/saml/samlidp
 go 1.21.0
 
 require (
-	github.com/ZackaryWelch/saml v1.0.0
+	github.com/ZackaryWelch/saml v1.0.2
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/mattermost/xml-roundtrip-validator v0.1.0
 	github.com/zenazn/goji v1.0.1
