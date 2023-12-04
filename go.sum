@@ -1,7 +1,7 @@
-github.com/ZackaryWelch/saml/samlidp v1.0.0 h1:hc/oU3qvpyOcKPnReWKpowQkG1JB1UIpYkr7s9RFz/A=
-github.com/ZackaryWelch/saml/samlidp v1.0.0/go.mod h1:j00T7IBsOjJGKbx7FwuE/MtQlzmJapX01TdxG38oAhw=
-github.com/ZackaryWelch/saml/samlsp v1.0.0 h1:BlrAcXnFrG7db8BYqDp81pEsVSUnkz00+LhuhNjBXR4=
-github.com/ZackaryWelch/saml/samlsp v1.0.0/go.mod h1:54RCF2pCZe0OHP2yPBsDjELVqxgruQ53RdnqI6Jxb9s=
+github.com/ZackaryWelch/saml/samlidp v1.0.2 h1:XmijQDtXWW+7eXYIMiRIeEFsfleAu0y6tXYHRkf5868=
+github.com/ZackaryWelch/saml/samlidp v1.0.2/go.mod h1:ibHhnwYsfUdYgXhq3h6VxdltkM1oRzfXMd8AODgVHbI=
+github.com/ZackaryWelch/saml/samlsp v1.0.2 h1:aIN7lelNFePXZlhFPhUPqqklPn0VGg1gUFXGDhRBbOE=
+github.com/ZackaryWelch/saml/samlsp v1.0.2/go.mod h1:niv4nTM6/mxoNOn3ia5rvhLHQawW/IEIvjrEbRAmOZg=
 github.com/beevik/etree v1.1.0/go.mod h1:r8Aw8JqVegEf0w2fDnATrX9VpkMcyFeM0FhwO62wh+A=
 github.com/beevik/etree v1.2.0 h1:l7WETslUG/T+xOPs47dtd6jov2Ii/8/OjCldk5fYfQw=
 github.com/beevik/etree v1.2.0/go.mod h1:aiPf89g/1k3AShMVAzriilpcE4R/Vuor90y83zVZWFc=
@@ -50,8 +50,8 @@ github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcU
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/zenazn/goji v1.0.1 h1:4lbD8Mx2h7IvloP7r2C0D6ltZP6Ufip8Hn0wmSK5LR8=
 github.com/zenazn/goji v1.0.1/go.mod h1:7S9M489iMyHBNxwZnk9/EHS098H4/F6TATF2mIxtB1Q=
-golang.org/x/crypto v0.12.0 h1:tFM/ta59kqch6LlvYnPa0yx5a83cL2nHflFhYKvv9Yk=
-golang.org/x/crypto v0.12.0/go.mod h1:NF0Gs7EO5K4qLn+Ylc+fih8BSTeIjAP05siRnAh98yw=
+golang.org/x/crypto v0.16.0 h1:mMMrFzRSCF0GvB7Ne27XVtVAaXLrPmgPC7/v0tkwHaY=
+golang.org/x/crypto v0.16.0/go.mod h1:gCAAfMLgwOJRpTjQ2zCCt2OcSfYMTeZVSRtQlPC7Nq4=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c/go.mod h1:JHkPIbrfpd72SG/EVd6muEfDQjcINNoR0C8j2r3qZ4Q=

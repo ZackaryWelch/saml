@@ -1,6 +1,6 @@
 module github.com/ZackaryWelch/saml/samlsp
 
-go 1.21.0
+go 1.21.4
 
 require (
 	github.com/ZackaryWelch/saml v1.0.2
@@ -19,6 +19,6 @@ require (
 	github.com/jonboulle/clockwork v0.4.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	golang.org/x/crypto v0.12.0 // indirect
+	golang.org/x/crypto v0.16.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

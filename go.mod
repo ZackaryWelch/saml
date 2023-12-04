@@ -1,6 +1,6 @@
 module github.com/ZackaryWelch/saml
 
-go 1.21.0
+go 1.21.4
 
 require (
 	github.com/ZackaryWelch/saml/samlidp v1.0.2
@@ -12,7 +12,7 @@ require (
 	github.com/mattermost/xml-roundtrip-validator v0.1.0
 	github.com/russellhaering/goxmldsig v1.4.0
 	github.com/zenazn/goji v1.0.1
-	golang.org/x/crypto v0.12.0
+	golang.org/x/crypto v0.16.0
 	gotest.tools v2.2.0+incompatible
 )
 
