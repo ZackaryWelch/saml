@@ -1,5 +1,5 @@
-github.com/ZackaryWelch/saml v1.0.2 h1:7MrOcoJbJ7/FZ3jJ+J2x6yLdDjk7aKSsEm3erOKbM3Y=
-github.com/ZackaryWelch/saml v1.0.2/go.mod h1:irwAnVCo4GfU1FLBf3pb2wFZui+ngk2v8ZtUfwtIMpU=
+github.com/ZackaryWelch/saml v1.0.3 h1:377aA/2l9TDr9JbOrgZl6PZUhN4JM4VkwwVb8GfjyDI=
+github.com/ZackaryWelch/saml v1.0.3/go.mod h1:iy29jWBCHFaaZinuiSpFNz9lUh6td2IyjUOt6nHp6OY=
 github.com/beevik/etree v1.1.0/go.mod h1:r8Aw8JqVegEf0w2fDnATrX9VpkMcyFeM0FhwO62wh+A=
 github.com/beevik/etree v1.2.0 h1:l7WETslUG/T+xOPs47dtd6jov2Ii/8/OjCldk5fYfQw=
 github.com/beevik/etree v1.2.0/go.mod h1:aiPf89g/1k3AShMVAzriilpcE4R/Vuor90y83zVZWFc=
