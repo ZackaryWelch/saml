@@ -7,10 +7,7 @@ import (
 	"crypto/x509"
 	"net/http"
 	"net/url"
-	"regexp"
 	"sync"
-
-	"github.com/zenazn/goji/web"
 
 	"github.com/ZackaryWelch/saml"
 	"github.com/ZackaryWelch/saml/logger"
@@ -84,42 +81,42 @@ func New(opts Options) (*Server, error) {
 // is called automatically for you by New, but you may need to call it
 // yourself if you don't create the object using New.)
 func (s *Server) InitializeHTTP() {
-	mux := web.New()
+	mux := http.NewServeMux()
 	s.Handler = mux
 
-	mux.Get("/metadata", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/metadata", func(w http.ResponseWriter, r *http.Request) {
 		s.idpConfigMu.RLock()
 		defer s.idpConfigMu.RUnlock()
 		s.IDP.ServeMetadata(w, r)
 	})
-	mux.Handle("/sso", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/sso", func(w http.ResponseWriter, r *http.Request) {
 		s.idpConfigMu.RLock()
 		defer s.idpConfigMu.RUnlock()
 		s.IDP.ServeSSO(w, r)
 	})
 
-	mux.Handle("/login", s.HandleLogin)
-	mux.Handle("/login/:shortcut", s.HandleIDPInitiated)
-	mux.Handle("/login/:shortcut/*", s.HandleIDPInitiated)
+	mux.HandleFunc("/login", s.HandleLogin)
+	mux.HandleFunc("/login/:shortcut", s.HandleIDPInitiated)
+	mux.HandleFunc("/login/:shortcut/*", s.HandleIDPInitiated)
 
-	mux.Get("/services/", s.HandleListServices)
-	mux.Get("/services/:id", s.HandleGetService)
-	mux.Put("/services/:id", s.HandlePutService)
+	mux.HandleFunc("/services/", s.HandleListServices)
+	mux.HandleFunc("/services/:id", s.HandleGetService)
+	/*mux.Put("/services/:id", s.HandlePutService)
 	mux.Post("/services/:id", s.HandlePutService)
-	mux.Delete("/services/:id", s.HandleDeleteService)
+	mux.Delete("/services/:id", s.HandleDeleteService)*/
 
-	mux.Get("/users/", s.HandleListUsers)
-	mux.Get("/users/:id", s.HandleGetUser)
-	mux.Put("/users/:id", s.HandlePutUser)
+	mux.HandleFunc("/users/", s.HandleListUsers)
+	mux.HandleFunc("/users/:id", s.HandleGetUser)
+	/*mux.Put("/users/:id", s.HandlePutUser)
 	mux.Delete("/users/:id", s.HandleDeleteUser)
 
 	sessionPath := regexp.MustCompile("/sessions/(?P<id>.*)")
-	mux.Get("/sessions/", s.HandleListSessions)
-	mux.Get(sessionPath, s.HandleGetSession)
+	mux.HandleFunc("/sessions/", s.HandleListSessions)
+	mux.HandleFunc(sessionPath, s.HandleGetSession)
 	mux.Delete(sessionPath, s.HandleDeleteSession)
 
 	mux.Get("/shortcuts/", s.HandleListShortcuts)
 	mux.Get("/shortcuts/:id", s.HandleGetShortcut)
 	mux.Put("/shortcuts/:id", s.HandlePutShortcut)
-	mux.Delete("/shortcuts/:id", s.HandleDeleteShortcut)
+	mux.Delete("/shortcuts/:id", s.HandleDeleteShortcut)*/
 }

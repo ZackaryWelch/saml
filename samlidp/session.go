@@ -11,8 +11,6 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/zenazn/goji/web"
-
 	"github.com/ZackaryWelch/saml"
 )
 
@@ -136,7 +134,7 @@ func (s *Server) sendLoginForm(w http.ResponseWriter, _ *http.Request, req *saml
 // in the request body, then they are validated. For valid credentials, the response is a
 // 200 OK and the JSON session object. For invalid credentials, the HTML login prompt form
 // is sent.
-func (s *Server) HandleLogin(_ web.C, w http.ResponseWriter, r *http.Request) {
+func (s *Server) HandleLogin(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		return
@@ -153,7 +151,7 @@ func (s *Server) HandleLogin(_ web.C, w http.ResponseWriter, r *http.Request) {
 
 // HandleListSessions handles the `GET /sessions/` request and responds with a JSON formatted list
 // of session names.
-func (s *Server) HandleListSessions(_ web.C, w http.ResponseWriter, _ *http.Request) {
+func (s *Server) HandleListSessions(w http.ResponseWriter, _ *http.Request) {
 	sessions, err := s.Store.List("/sessions/")
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
@@ -171,9 +169,9 @@ func (s *Server) HandleListSessions(_ web.C, w http.ResponseWriter, _ *http.Requ
 
 // HandleGetSession handles the `GET /sessions/:id` request and responds with the session
 // object in JSON format.
-func (s *Server) HandleGetSession(c web.C, w http.ResponseWriter, _ *http.Request) {
+func (s *Server) HandleGetSession(w http.ResponseWriter, r *http.Request) {
 	session := saml.Session{}
-	err := s.Store.Get(fmt.Sprintf("/sessions/%s", c.URLParams["id"]), &session)
+	err := s.Store.Get(fmt.Sprintf("/sessions/%s", s.idFromPath(r.URL.Path)), &session)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
@@ -186,8 +184,8 @@ func (s *Server) HandleGetSession(c web.C, w http.ResponseWriter, _ *http.Reques
 
 // HandleDeleteSession handles the `DELETE /sessions/:id` request. It invalidates the
 // specified session.
-func (s *Server) HandleDeleteSession(c web.C, w http.ResponseWriter, _ *http.Request) {
-	err := s.Store.Delete(fmt.Sprintf("/sessions/%s", c.URLParams["id"]))
+func (s *Server) HandleDeleteSession(w http.ResponseWriter, r *http.Request) {
+	err := s.Store.Delete(fmt.Sprintf("/sessions/%s", s.idFromPath(r.URL.Path)))
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
